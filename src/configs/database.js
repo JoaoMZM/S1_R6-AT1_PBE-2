@@ -87,7 +87,7 @@ export async function initializeDatabase() {
         `);
 
         await tempConnection.query(`
-            CREATE TABLE pedidos IF NOT EXISTS (
+            CREATE TABLE IF NOT EXISTS pedidos (
                 id_pedido int NOT NULL AUTO_INCREMENT,
                 data_pedido datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 status_pedido enum('PENDENTE','PAGO','ENVIADO','ENTREGUE','CANCELADO') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'PENDENTE',
